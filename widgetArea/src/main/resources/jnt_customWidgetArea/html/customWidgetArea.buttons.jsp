@@ -17,7 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<template:addResources type="css" resources="bootstrap.css" />
+<template:addResources type="css" resources="bootstrap.min.css" />
 <jcr:node var="widgetsAvailable" path="${renderContext.site.path}/availableWidgets"/>
 <template:addCacheDependency node="${widgetsAvailable}"/>
 <!-- Trigger the modal with a button -->

@@ -20,6 +20,7 @@
 <template:addResources type="javascript" resources="jquery.js"/>
 <template:addResources type="javascript" resources="jquery-ui.js"/>
 <template:addResources type="css" resources="jquery-ui.min.css"/>
+<template:addResources type="css" resources="widgetArea.css"/>
 
 <jcr:node var="userNode" path="${currentUser.localPath}" />
     <jcr:node var="userContentNode" path="${currentUser.localPath}/contents" />
@@ -33,7 +34,7 @@
         <div class="widgetArea">
             <ul class="sortable" id="sortableWidgetArea"><%-- TODO how about if I use twice the component in the same page? I will have twice id="sortableWidgetArea" --%>
                 <c:forEach items="${jcr:getChildrenOfType(currentNode, 'jmix:widget')}" var="widget">
-                    <li><template:module node="${widget}" view="default"/></li>
+                    <li><template:module node="${widget}" view="detailview"/></li>
                 </c:forEach>
             </ul>
             <c:choose>

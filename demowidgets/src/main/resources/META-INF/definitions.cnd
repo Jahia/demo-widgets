@@ -1,3 +1,5 @@
+<jdmix = 'http://www.jahia.org/jahiademo/mix/1.0'>
+<jdnt = 'http://www.jahia.org/jahiademo/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <mix = 'http://www.jcp.org/jcr/mix/1.0'>
@@ -16,3 +18,7 @@
 
 [jnt:scriptWidget] > jnt:content, jmix:widget, jmix:droppableContent
 - j:script (string, richtext) = "" indexed=no autocreated
+
+[jnt:stockWidget] > jdnt:stockWidget, jmix:widget
+
+[jnt:newsWidget] > jnt:news, jmix:widget

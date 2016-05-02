@@ -17,10 +17,11 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
-<div class="widget">
-    <h3>${currentNode.displayableName}</h3>
-    <div class="widget-content">
+<div class="panel panel-grey margin-bottom-20">
+    <div class="panel-heading">
+        <h5 class="panel-title">${currentNode.displayableName}</h5>
+    </div>
+    <div class="panel-body widget-content">
         <template:include view="detail"/>
     </div>
 </div>
