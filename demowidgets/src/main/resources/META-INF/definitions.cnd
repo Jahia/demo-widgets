@@ -1,0 +1,18 @@
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+
+[jnt:rssWidget] > jnt:rss, jmix:widget
+
+[jnt:googleMapWidget] > jnt:content, jmix:widget, jmix:droppableContent
+- j:height (long) = 500 indexed=no autocreated
+- j:lat (double) = '-34.397' indexed=no autocreated
+- j:lng (double) = '150.644' indexed=no autocreated
+
+[jnt:currentUserBookmarksWidget] > jnt:currentUserBookmarks, jmix:widget
+
+[jnt:twitterWidgetWidget] > jnt:twitterWidget, jmix:widget
+ - jcr:title (string)
+
+[jnt:scriptWidget] > jnt:content, jmix:widget, jmix:droppableContent
+- j:script (string, richtext) = "" indexed=no autocreated
