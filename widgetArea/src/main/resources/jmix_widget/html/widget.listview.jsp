@@ -17,14 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
-<c:forEach items="${currentNode.nodes}" var="widget">
-    <c:if test="${jcr:isNodeType(widget,'jmix:widget')}">
-        <template:module node="${widget}" view="default"/>
-    </c:if>
-</c:forEach>
-
-
-<c:if test="${renderContext.editMode}">
-    <template:module path="*"/>
-</c:if>
+<div>
+    <h1 class="panel-title"> <fmt:message key="widgetarea.widgetName"/>: ${currentNode.displayableName}</h1>
+    <p><fmt:message key="widgetarea.widgetType"/>: ${currentNode.primaryNodeTypeName}</p>
+</div>

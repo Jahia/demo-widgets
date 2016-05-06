@@ -6,7 +6,7 @@
 
 [jnt:rssWidget] > jnt:rss, jmix:widget
 
-[jnt:googleMapWidget] > jnt:content, jmix:widget, jmix:droppableContent
+[jnt:googleMapWidget] > jnt:content, jmix:widget
 - j:height (long) = 500 indexed=no autocreated
 - j:lat (double) = '-34.397' indexed=no autocreated
 - j:lng (double) = '150.644' indexed=no autocreated
@@ -16,7 +16,7 @@
 [jnt:twitterWidgetWidget] > jnt:twitterWidget, jmix:widget
  - jcr:title (string)
 
-[jnt:scriptWidget] > jnt:content, jmix:widget, jmix:droppableContent
+[jnt:scriptWidget] > jnt:content, jmix:widget
 - j:script (string, richtext) = "" indexed=no autocreated
 
 [jnt:stockWidget] > jdnt:stockWidget, jmix:widget

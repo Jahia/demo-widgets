@@ -4,12 +4,11 @@
 
 [jmix:widgetCategory] > jmix:droppableContent, jmix:editorialContent mixin
 
-[jmix:widget] mixin
+[jmix:widget] > jmix:widgetCategory mixin
 
 [jnt:customWidgetArea] > jnt:content, jmix:widgetCategory orderable
  + * (jmix:widget)
 
- [jnt:widgetList] > jnt:content orderable
-  + * (jmix:widget)
+ [jnt:widgetList] > jnt:contentList
 
 
