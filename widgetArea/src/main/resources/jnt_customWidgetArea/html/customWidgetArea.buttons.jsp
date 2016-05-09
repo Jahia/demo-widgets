@@ -21,8 +21,8 @@
 <jcr:node var="widgetsAvailable" path="${renderContext.site.path}/availableWidgets"/>
 <template:addCacheDependency node="${widgetsAvailable}"/>
 <!-- Trigger the modal with a button -->
-<button type="button" data-toggle="modal" data-placement="top" data-delay="300" title="" class="btn icon-plus addwidgets" data-target="#widgetCreation${currentNode.identifier}"><fmt:message key="widgetarea.add.widget.button"/></button>
-<button class="btn btn-primary" type="button" onclick="$('#reset${currentNode.identifier}').submit()"><fmt:message key="widgetarea.reset.area.button"/></button>
+<button type="button" data-toggle="modal" data-placement="top" data-delay="300" title="" class="btn btn-default btn-u" data-target="#widgetCreation${currentNode.identifier}"><fmt:message key="widgetarea.add.widget.button"/></button>
+<button class="btn btn-default btn-u" type="button" onclick="$('#reset${currentNode.identifier}').submit()"><fmt:message key="widgetarea.reset.area.button"/></button>
 
 <!-- Modal -->
 <div class="modal fade" id="widgetCreation${currentNode.identifier}" role="dialog">
@@ -44,7 +44,7 @@
                             </label>
                         </div>
                     </c:forEach>
-                    <button class="btn btn-primary" id="widgetCreateButton" type="submit" disabled><fmt:message key="widgetarea.create.button"/></button>
+                    <button class="btn btn-default btn-u" id="widgetCreateButton" type="submit" disabled><fmt:message key="widgetarea.create.button"/></button>
                 </form>
             </div>
         </div>

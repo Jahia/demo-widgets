@@ -16,7 +16,7 @@
 [jnt:twitterWidgetWidget] > jnt:twitterWidget, jmix:widget
  - jcr:title (string)
 
-[jnt:scriptWidget] > jnt:content, jmix:widget
+[jnt:scriptWidget] > jnt:content, mix:title, jmix:widget
 - j:script (string, richtext) = "" indexed=no autocreated
 
 [jnt:stockWidget] > jdnt:stockWidget, jmix:widget

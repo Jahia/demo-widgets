@@ -25,6 +25,7 @@
                 <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
                 <input type="hidden" name="jcrNodeType" value="${currentNode.primaryNodeTypeName}"/>
 
+
                 <div class="form-group">
                     <label for="inputTitle" class="col-lg-2 control-label"><fmt:message key="title"/></label>
                     <div class="col-lg-10">
@@ -33,12 +34,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputscript" class="col-lg-2 control-label">Script</label>
+                    <label for="inputstock" class="col-lg-2 control-label"><fmt:message key="jdnt_stockWidget.stock"/></label>
                     <div class="col-lg-10">
-                        <textarea type="text" name="j:script" class="form-control" id="inputscript" rows="8"><c:out value="${currentNode.properties['j:script'].string}"/></textarea>
+                        <input type="text" name="stock" class="form-control" id="inputstock" value="${currentNode.properties['stock'].string}">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                         <button class="btn btn-primary" type="submit">

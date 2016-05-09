@@ -56,7 +56,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title"><fmt:message key="widgetarea.edit"/>&nbsp${currentNode.displayableName}</h4>
             </div>
             <div class="modal-body">
                 <template:include view="edit"/>
@@ -67,16 +67,13 @@
 </div>
 
 <!-- Modal Full -->
-<div class="modal fade" id="fullWidget${currentNode.identifier}" role="dialog">
+<div class="modal fade modal-fullscreen" id="fullWidget${currentNode.identifier}" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
+        <div class="modal-content text-center">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <template:include view="full"/>
             </div>
         </div>

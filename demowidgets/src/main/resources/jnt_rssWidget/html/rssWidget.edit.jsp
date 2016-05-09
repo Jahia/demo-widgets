@@ -19,14 +19,38 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <template:tokenizedForm>
-    <form action="<c:url value='${url.base}${currentNode.path}'/>" method="post">
-        <p>Title: <input type="text" name="jcr:title" value="${currentNode.properties['jcr:title'].string}"/></p>
-        <p>Url: <input type="text" name="url" value="${currentNode.properties.url.string}"/></p>
-        <p>nbEntries: <input type="text" name="nbEntries" value="${currentNode.properties.nbEntries.long}"/></p>
+    <form action="<c:url value='${url.base}${currentNode.path}'/>" method="post" class="form-horizontal">
+
+        <div class="form-group">
+            <label for="inputTitle" class="col-lg-2 control-label">Title</label>
+            <div class="col-lg-10">
+                <input type="text" name="jcr:title" class="form-control" id="inputTitle" value="${currentNode.properties['jcr:title'].string}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputurl" class="col-lg-2 control-label">Url</label>
+            <div class="col-lg-10">
+                <input type="text" name="url" class="form-control" id="inputurl" value="${currentNode.properties.url.string}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputnbEntries" class="col-lg-2 control-label">nbEntries</label>
+            <div class="col-lg-10">
+                <input type="text" name="nbEntries" class="form-control" id="inputnbEntries" value="${currentNode.properties.nbEntries.long}">
+            </div>
+        </div>
         <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
             <%-- Define the output format for the newly created node by default html or by redirectTo--%>
         <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
         <input type="hidden" name="jcrMethodToCall" value="PUT"/>
-        <button type="submit">UPDATE</button>
+
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit">
+                    <fmt:message key="save"/>
+                </button>
+            </div>
+        </div>
     </form>
 </template:tokenizedForm>

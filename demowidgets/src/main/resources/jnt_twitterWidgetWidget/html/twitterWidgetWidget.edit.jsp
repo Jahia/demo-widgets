@@ -19,36 +19,30 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <div class="widget-edit">
-    <h2>
-        Edit: ${currentNode.displayableName}
-    </h2>
-
     <div class="box-1">
         <template:tokenizedForm >
-            <form action="<c:url value="${url.base}${currentNode.path}"/>" method="POST">
+            <form action="<c:url value="${url.base}${currentNode.path}"/>" method="POST" class="form-horizontal">
                 <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
                 <input type="hidden" name="jcrNodeType" value="${currentNode.primaryNodeTypeName}"/>
 
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <span><fmt:message key="title"/>:</span>
-                            <input type="text" name="jcr:title" value="<c:out value="${currentNode.displayableName}"/>"/>
-                        </label>
+
+                <div class="form-group">
+                    <label for="inputTitle" class="col-lg-2 control-label">Title</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="jcr:title" class="form-control" id="inputTitle" value="${currentNode.properties['jcr:title'].string}">
                     </div>
                 </div>
 
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <span>widgetId:</span>
-                            <input type="text" name="widgetId" value="<c:out value="${currentNode.properties['widgetId'].string}"/>
-                        </label>
+
+                <div class="form-group">
+                    <label for="inputwidgetId" class="col-lg-2 control-label">Widget ID</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="widgetId" class="form-control" id="inputwidgetId" value="${currentNode.properties['widgetId'].string}">
                     </div>
                 </div>
 
-                <div class="row-fluid">
-                    <div class="span12">
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
                         <button class="btn btn-primary" type="submit">
                             <fmt:message key="save"/>
                         </button>
