@@ -7,19 +7,6 @@
                    j:title="demoWidgets"
                    jcr:mixinTypes="jmix:hasExternalProviderExtension"
                    jcr:primaryType="jnt:module">
-                <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
-                  jcr:primaryType="jnt:moduleVersionFolder"
-                  j:staticMountPointProviderKey="module-demowidgets-1.0-SNAPSHOT">
-                    <src jcr:primaryType="jnt:folder">
-                        <main jcr:primaryType="jnt:folder">
-                            <resources jcr:primaryType="jnt:folder">
-                                <META-INF jcr:primaryType="jnt:metaInfFolder">
-                                    <definitions.cnd jcr:primaryType="jnt:definitionFile"/>
-                                </META-INF>
-                            </resources>
-                        </main>
-                    </src>
-                </sources>
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder"/>

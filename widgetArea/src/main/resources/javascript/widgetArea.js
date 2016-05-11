@@ -36,7 +36,11 @@ function initWidgetArea(areaId,actionPath){
 
 $(document).ready(function() {
     $('input[name="widgetPath"]').change(function(){
-        $('#widgetCreateButton').prop('disabled', false);
+        if($('input[name="widgetPath"]:checked').length){
+            $('#widgetCreateButton').prop('disabled', false);
+        }else{
+            $('#widgetCreateButton').prop('disabled', true);
+        }
     });
 
     // .modal-backdrop classes

@@ -37,11 +37,14 @@
                 <form id action="<c:url value='${url.base}${currentNode.path}.createWidget.do'/>" method="post">
                     <input name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" type="hidden"/>
                     <c:forEach items="${jcr:getChildrenOfType(widgetsAvailable, 'jmix:widget')}" var="widget">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="widgetPath" value="${widget.path}"/>
-                                    ${widget.displayableName}
-                            </label>
+                        <template:addCacheDependency node="${widget}"/>
+                        <div class="col-lg-offset-3 col-lg-9 text-left">
+                            <div class="radio">
+                                <label>
+                                    <input type="checkbox" name="widgetPath" value="${widget.path}"/>
+                                        ${widget.displayableName}
+                                </label>
+                            </div>
                         </div>
                     </c:forEach>
                     <button class="btn btn-default btn-u" id="widgetCreateButton" type="submit" disabled><fmt:message key="widgetarea.create.button"/></button>

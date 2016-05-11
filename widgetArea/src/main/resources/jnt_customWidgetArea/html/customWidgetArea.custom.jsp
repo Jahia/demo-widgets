@@ -22,27 +22,28 @@
 <template:addResources type="javascript" resources="jquery-ui.js"/>
 <template:addResources type="javascript" resources="widgetArea.js"/>
 
+<div class="widgetarea-container">
+    <div class="widgetArea">
+        <ul class="sortable" id="sortableWidgetArea${currentNode.identifier}">
+            <c:forEach items="${jcr:getChildrenOfType(currentNode, 'jmix:widget')}" var="widget">
+                <li class="widget sortableWidget" id="widget-${widget.identifier}">
+                    <template:module node="${widget}" view="editable"/>
+                </li>
+            </c:forEach>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="text-center">
+        <template:include view="buttons"/>
+    </div>
 
-<div class="widgetArea">
-    <ul class="sortable" id="sortableWidgetArea${currentNode.identifier}">
-        <c:forEach items="${jcr:getChildrenOfType(currentNode, 'jmix:widget')}" var="widget">
-            <li class="widget sortableWidget" id="widget-${widget.identifier}">
-                <template:module node="${widget}" view="editable"/>
-            </li>
-        </c:forEach>
-    </ul>
+    <c:if test="${not renderContext.editMode}">
+        <template:addResources type="inline">
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    initWidgetArea("${currentNode.identifier}","<c:url value='${url.base}${currentNode.path}.moveWidget.do'/>");
+                })
+            </script>
+        </template:addResources>
+    </c:if>
 </div>
-<div class="clear"></div>
-<div class="text-center">
-    <template:include view="buttons"/>
-</div>
-
-<c:if test="${not renderContext.editMode}">
-    <template:addResources type="inline">
-        <script type="text/javascript">
-            $(document).ready(function() {
-                initWidgetArea("${currentNode.identifier}","<c:url value='${url.base}${currentNode.path}.moveWidget.do'/>");
-            })
-        </script>
-    </template:addResources>
-</c:if>

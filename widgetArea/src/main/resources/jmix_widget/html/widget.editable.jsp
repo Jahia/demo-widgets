@@ -20,11 +20,11 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<div class="panel panel-grey margin-bottom-20">
+<div class="panel panel-grey margin-bottom-10">
 
     <div class="panel-heading">
         <h5 class="panel-title">${currentNode.displayableName}
-            <a href="#"><i class="fa fa-remove pull-right" onclick="deleteWidget('${currentNode.identifier}')" data-toggle="tooltip" data-placement="top" data-delay="400" title="" data-original-title="Delete this widget"></i></a>
+            <a href="#"><i class="fa fa-remove pull-right" onclick="deleteWidget('${currentNode.identifier}');return false;" data-toggle="tooltip" data-placement="top" data-delay="400" title="" data-original-title="Delete this widget"></i></a>
             <c:if test="${widget:hasNoDefaultScriptView(currentNode, 'full' , renderContext)}">
                 <a href="#"><i class="fa fa-expand pull-right full" data-toggle="modal" data-placement="top" data-target="#fullWidget${currentNode.identifier}" data-delay="400" title="" data-original-title="Expand this widget"></i></a>
             </c:if>

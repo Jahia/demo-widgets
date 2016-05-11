@@ -17,7 +17,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<div class="panel panel-grey margin-bottom-20">
+<div class="panel panel-grey margin-bottom-10">
     <div class="panel-heading">
         <h5 class="panel-title">${currentNode.displayableName}</h5>
     </div>

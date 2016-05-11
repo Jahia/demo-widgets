@@ -38,12 +38,16 @@ public class CreateWidgetAction extends Action {
      */
     @Override
     public ActionResult doExecute(HttpServletRequest req, RenderContext renderContext, Resource resource, JCRSessionWrapper session, Map<String, List<String>> parameters, URLResolver urlResolver) throws Exception {
-        String widgetPath = req.getParameter(PARAM_WIDGET_PATH);
-        if (widgetPath!=null) {
-            JCRNodeWrapper widgetToCreate = session.getNode(widgetPath);
-            JCRNodeWrapper widgetFolder = session.getNode(resource.getNode().getPath());
-            //widgetToCreate.copy(widgetFolder.getPath());
-            widgetToCreate.copy(widgetFolder.getPath(), JCRContentUtils.findAvailableNodeName(widgetFolder, widgetToCreate.getName()));
+        String[] widgetPaths = req.getParameterValues(PARAM_WIDGET_PATH);
+        if (widgetPaths != null) {
+            for (String widgetPath : widgetPaths) {
+                if (widgetPath != null) {
+                    JCRNodeWrapper widgetToCreate = session.getNode(widgetPath);
+                    JCRNodeWrapper widgetFolder = session.getNode(resource.getNode().getPath());
+                    //widgetToCreate.copy(widgetFolder.getPath());
+                    widgetToCreate.copy(widgetFolder.getPath(), JCRContentUtils.findAvailableNodeName(widgetFolder, widgetToCreate.getName()));
+                }
+            }
             session.save();
         }
         return new ActionResult(HttpServletResponse.SC_OK, null, null);

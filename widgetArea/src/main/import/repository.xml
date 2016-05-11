@@ -12,7 +12,9 @@
                   j:staticMountPointProviderKey="module-widgetarea-1.0-SNAPSHOT">
                     <src jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
                         <main jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
-                            <resources jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder"/>
+                            <resources jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:folder">
+                                <jnt_widgetList jcr:primaryType="jnt:nodeTypeFolder"/>
+                            </resources>
                         </main>
                     </src>
                 </sources>

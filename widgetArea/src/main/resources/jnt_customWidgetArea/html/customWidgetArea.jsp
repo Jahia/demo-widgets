@@ -30,31 +30,35 @@
 <c:choose>
     <c:when test="${userCustomWidgets == null || renderContext.editMode}">
         <%-- We display the default area --%>
+        <template:addCacheDependency node="${userNode}"/>
         <template:addCacheDependency node="${widgetFolder}"/>
-        <div class="widgetArea">
-            <ul class="sortable" id="sortableWidgetArea"><%-- TODO how about if I use twice the component in the same page? I will have twice id="sortableWidgetArea" --%>
-                <c:forEach items="${jcr:getChildrenOfType(currentNode, 'jmix:widget')}" var="widget">
-                    <li><template:module node="${widget}" view="detailview"/></li>
-                </c:forEach>
-            </ul>
-            <c:choose>
-                <c:when test="${renderContext.editMode}">
-                    <template:module path="*"/>
-                </c:when>
-                <c:when test="${renderContext.loggedIn}">
-                    <%-- We display the customize button --%>
-                    <template:tokenizedForm>
-                        <div class="text-center">
-                            <form id action="<c:url value='${url.base}${currentNode.path}.customizeWidgetArea.do'/>" method="post">
-                                <input name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" type="hidden"/>
-                                <button class="btn btn-primary" type="submit"><fmt:message key="widgetarea.customize.area.button"/></button>
-                            </form>
-                        </div>
-                    </template:tokenizedForm>
-                </c:when>
-                <c:otherwise>
-                </c:otherwise>
-            </c:choose>
+        <template:addCacheDependency node="${userContentNode}"/>
+        <div class="widgetarea-container">
+            <div class="widgetArea">
+                <ul class="sortable" id="sortableWidgetArea"><%-- TODO how about if I use twice the component in the same page? I will have twice id="sortableWidgetArea" --%>
+                    <c:forEach items="${jcr:getChildrenOfType(currentNode, 'jmix:widget')}" var="widget">
+                        <li><template:module node="${widget}" view="detailview"/></li>
+                    </c:forEach>
+                </ul>
+                <c:choose>
+                    <c:when test="${renderContext.editMode}">
+                        <template:module path="*"/>
+                    </c:when>
+                    <c:when test="${renderContext.loggedIn}">
+                        <%-- We display the customize button --%>
+                        <template:tokenizedForm>
+                            <div class="text-center">
+                                <form id action="<c:url value='${url.base}${currentNode.path}.customizeWidgetArea.do'/>" method="post">
+                                    <input name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" type="hidden"/>
+                                    <button class="btn btn-primary" type="submit"><fmt:message key="widgetarea.customize.area.button"/></button>
+                                </form>
+                            </div>
+                        </template:tokenizedForm>
+                    </c:when>
+                    <c:otherwise>
+                    </c:otherwise>
+                </c:choose>
+            </div>
         </div>
         <div class="clear"></div>
     </c:when>
