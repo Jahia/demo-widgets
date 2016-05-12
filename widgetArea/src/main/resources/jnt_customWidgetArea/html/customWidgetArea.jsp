@@ -44,7 +44,7 @@
                     <c:when test="${renderContext.editMode}">
                         <template:module path="*"/>
                     </c:when>
-                    <c:when test="${renderContext.loggedIn}">
+                    <c:when test="${renderContext.loggedIn && renderContext.liveMode}">
                         <%-- We display the customize button --%>
                         <template:tokenizedForm>
                             <div class="text-center">
