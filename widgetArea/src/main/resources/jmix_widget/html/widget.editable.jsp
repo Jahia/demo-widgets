@@ -24,14 +24,14 @@
 
     <div class="panel-heading">
         <h5 class="panel-title">${currentNode.displayableName}
-            <a href="#"><i class="fa fa-remove pull-right" onclick="deleteWidget('${currentNode.identifier}');return false;" data-toggle="tooltip" data-placement="top" data-delay="400" title="" data-original-title="Delete this widget"></i></a>
+            <a href="javascript:void(0)"><i class="fa fa-remove pull-right" onclick="deleteWidget('${currentNode.identifier}');return false;" data-toggle="tooltip" data-placement="top" data-delay="400" title="" data-original-title="Delete this widget"></i></a>
             <c:if test="${widget:hasNoDefaultScriptView(currentNode, 'full' , renderContext)}">
-                <a href="#"><i class="fa fa-expand pull-right full" data-toggle="modal" data-placement="top" data-target="#fullWidget${currentNode.identifier}" data-delay="400" title="" data-original-title="Expand this widget"></i></a>
+                <a href="javascript:void(0)"><i class="fa fa-expand pull-right full" data-toggle="modal" data-placement="top" data-target="#fullWidget${currentNode.identifier}" data-delay="400" title="" data-original-title="Expand this widget"></i></a>
             </c:if>
             <c:if test="${widget:hasNoDefaultScriptView(currentNode, 'edit' , renderContext)}">
-                <a href="#"><i class="fa fa-cog pull-right setting" data-toggle="modal" data-placement="top" data-target="#editWidget${currentNode.identifier}" data-delay="400" title="" data-original-title="Configure this widget"></i></a>
+                <a href="javascript:void(0)"><i class="fa fa-cog pull-right setting" data-toggle="modal" data-placement="top" data-target="#editWidget${currentNode.identifier}" data-delay="400" title="" data-original-title="Configure this widget"></i></a>
             </c:if>
-            <a href="#"><i class="fa fa-arrows pull-right handle" data-toggle="tooltip" data-placement="top" data-delay="400" title="" aria-hidden="true"  data-original-title="Move this widget"></i></a>
+            <a href="javascript:void(0)"><i class="fa fa-arrows pull-right handle" data-toggle="tooltip" data-placement="top" data-delay="400" title="" aria-hidden="true"  data-original-title="Move this widget"></i></a>
 
         </h5>
     </div>
