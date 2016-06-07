@@ -22,3 +22,19 @@
 
 [jnt:richTextWidget] > jnt:bigText, mix:title, jmix:widget
 
+[jnt:youtubeFeed] > jnt:content, mix:title, jmix:socialComponent
+ - youtubeChannel (string)
+ - videoSize (string, choicelist[videoSizeInitializer,resourceBundle]) = 'responsive'
+
+[jmix:videoFixedSize] > jmix:templateMixin mixin
+extends = jnt:youtubeFeed
+ - videoWidth (long) = '480' indexed=no
+ - videoHeight (long) = '400' indexed=no
+
+[jmix:videoAspectRatio] > jmix:templateMixin mixin
+extends = jnt:youtubeFeed
+  - aspectRatio (string, choicelist[resourceBundle]) = '16by9' autocreated < '16by9', '4by3'
+
+[jnt:youtubeFeedWidget] > jnt:youtubeFeed, jmix:widget
+
+
