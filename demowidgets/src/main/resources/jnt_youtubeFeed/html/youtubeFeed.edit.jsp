@@ -38,6 +38,10 @@
                     <div class="col-lg-10">
                         <input type="text" name="youtubeChannel" class="form-control" id="inputstock" value="${currentNode.properties['youtubeChannel'].string}">
                     </div>
+
+                </div>
+                <div class="alert alert-info fade in">
+                    <strong><fmt:message key="jnt_youtubeFeedWidget.helpTitle"/></strong> <fmt:message key="jnt_youtubeFeedWidget.helpMessage"/>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
@@ -47,6 +51,7 @@
                     </div>
                 </div>
             </form>
+
         </template:tokenizedForm>
     </div>
 </div>
