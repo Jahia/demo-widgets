@@ -37,4 +37,4 @@ extends = jnt:youtubeFeed
 
 [jnt:youtubeFeedWidget] > jnt:youtubeFeed, jmix:widget
 
-
+[jnt:historicalChartWidget] > jnt:historicalChart, jmix:widget
