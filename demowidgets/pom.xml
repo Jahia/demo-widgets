@@ -63,7 +63,7 @@
     <developerConnection>scm:dummy:uri</developerConnection>
   </scm>
   <properties>
-    <jahia-depends>default,bookmarks,rss,twitter,jahiademo,widgetarea,historical-stock-chart</jahia-depends>
+    <jahia-depends>default,bookmarks,rss,twitter,jahiademo,dx-base-demo-components,widgetarea,historical-stock-chart</jahia-depends>
   </properties>
   <repositories>
     <repository>
