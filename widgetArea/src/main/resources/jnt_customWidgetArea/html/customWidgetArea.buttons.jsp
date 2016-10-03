@@ -34,7 +34,7 @@
                 <h4 class="modal-title"><fmt:message key="widgetarea.creation"/></h4>
             </div>
             <div class="modal-body">
-                <form id action="<c:url value='${url.base}${currentNode.path}.createWidget.do'/>" method="post">
+                <form class="widget-form" action="<c:url value='${url.base}${currentNode.path}.createWidget.do'/>" method="post">
                     <input name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" type="hidden"/>
                     <c:forEach items="${jcr:getChildrenOfType(widgetsAvailable, 'jmix:widget')}" var="widget">
                         <template:addCacheDependency node="${widget}"/>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </c:forEach>
-                    <button class="btn btn-default btn-u" id="widgetCreateButton" type="submit" disabled><fmt:message key="widgetarea.create.button"/></button>
+                    <button class="btn btn-default btn-u widgetCreateButton" type="submit" disabled><fmt:message key="widgetarea.create.button"/></button>
                 </form>
             </div>
         </div>

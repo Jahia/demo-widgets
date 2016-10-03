@@ -37,9 +37,9 @@ function initWidgetArea(areaId,actionPath){
 $(document).ready(function() {
     $('input[name="widgetPath"]').change(function(){
         if($('input[name="widgetPath"]:checked').length){
-            $('#widgetCreateButton').prop('disabled', false);
+            $(this).closest(".widget-form").find( ".widgetCreateButton" ).prop('disabled', false);
         }else{
-            $('#widgetCreateButton').prop('disabled', true);
+            $(this).closest(".widget-form").find( ".widgetCreateButton" ).prop('disabled', false);
         }
     });
 

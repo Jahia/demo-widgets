@@ -7,6 +7,3 @@
 
 [jnt:customWidgetArea] > jnt:content, jmix:widgetCategory orderable
  + * (jmix:widget)
-
-[jnt:widgetList] > jnt:contentList orderable
-
