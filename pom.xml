@@ -48,23 +48,27 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.jahia.modules</groupId>
-    <artifactId>jahia-modules</artifactId>
-    <version>7.1.1.0</version>
+    <artifactId>jahia-packages-parent</artifactId>
+    <groupId>org.jahia.packages</groupId>
+    <version>7.1.2.0</version>
   </parent>
-  <groupId>org.jahia.modules</groupId>
-  <artifactId>demowidgets</artifactId>
+  <groupId>org.jahia.packages</groupId>
+  <artifactId>dx-demo-widgets-package</artifactId>
+  <name>Demo Widget Package</name>
   <version>1.0-SNAPSHOT</version>
-  <packaging>bundle</packaging>
-  <name>demoWidgets</name>
-  <description>This is the custom module (demoWidgets) for running on a Digital Experience Manager server.</description>
-  <scm>
-    <connection>scm:dummy:uri</connection>
-    <developerConnection>scm:dummy:uri</developerConnection>
-  </scm>
+  <description>This is the custom module (dx-demo-widgets-package) for running on a Digital Experience Manager server.</description>
   <properties>
-    <jahia-depends>default,bookmarks,rss,twitter,dx-base-demo-templates,dx-base-demo-components,widgetarea,historical-stock-chart</jahia-depends>
+    <jahia.package.assembly.file>src/main/assembly/dx-demo-widgets-package.xml</jahia.package.assembly.file>
+    <jahia.package.sources.assembly.file>src/main/assembly/dx-demo-widgets-package-sources.xml</jahia.package.sources.assembly.file>
+    <jahia.final.package.name>dx-demo-widgets-package</jahia.final.package.name>
+    <jahia.manifest.package.id>dx-demo-widgets-package</jahia.manifest.package.id>
+    <jahia.manifest.description />
+    <jahia.manifest.license>org.jahia.core</jahia.manifest.license>
   </properties>
+  <scm>
+    <connection>scm:git:git@github.com:Jahia/dx-demo-widgets-package.git</connection>
+    <developerConnection>scm:git:git@github.com:Jahia/dx-demo-widgets-package.git</developerConnection>
+  </scm>
   <repositories>
     <repository>
       <releases>
@@ -79,15 +83,27 @@
       <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </repository>
   </repositories>
+  <dependencies>
+      <dependency>
+        <groupId>org.jahia.modules</groupId>
+        <artifactId>dx-demo-widgets-core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jahia.modules</groupId>
+        <artifactId>dx-demo-widgets</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions />
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
